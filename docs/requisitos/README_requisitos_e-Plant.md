@@ -1,3 +1,4 @@
+
 # Documentação de Requisitos e Diagramas - E-Plant
 
 ## 🌱 Visão Geral do Projeto
@@ -42,26 +43,109 @@
 ## 🔎 Modelagem e Diagramas UML
 
 ### Diagrama de Casos de Uso
-**Atores:**
-- **Consumidor:** Cadastrar, Login, Ver Produtos, Adicionar ao Carrinho, Finalizar Pedido, Ver Histórico
-- **Vendedor:** Cadastrar, Login, Cadastrar Produto, Editar Produto, Ver Pedidos
+```plantuml
+@startuml
+actor Consumidor
+actor Vendedor
 
-### Diagrama de Classes (Simplificado)
-- `Usuario(id, nome, email, senha, tipo)`
-- `Produto(id, nome, descricao, preco, imagem, id_vendedor)`
-- `Pedido(id, data, total, status, id_consumidor)`
-- `ItemPedido(id_pedido, id_produto, qtd, subtotal)`
-- `Carrinho(id_consumidor, itens)`
+rectangle "E-Plant Marketplace" {
+  Consumidor --> (Cadastrar)
+  Consumidor --> (Login)
+  Consumidor --> (Ver Produtos)
+  Consumidor --> (Adicionar ao Carrinho)
+  Consumidor --> (Finalizar Pedido)
+  Consumidor --> (Ver Histórico de Pedidos)
+
+  Vendedor --> (Cadastrar)
+  Vendedor --> (Login)
+  Vendedor --> (Cadastrar Produto)
+  Vendedor --> (Editar Produto)
+  Vendedor --> (Ver Pedidos Recebidos)
+}
+@enduml
+```
+
+### Diagrama de Classes
+```plantuml
+@startuml
+class Usuario {
+  +id: int
+  +nome: string
+  +email: string
+  +senha: string
+  +tipo: string
+}
+
+class Produto {
+  +id: int
+  +nome: string
+  +descricao: string
+  +preco: float
+  +imagem: string
+  +id_vendedor: int
+}
+
+class Pedido {
+  +id: int
+  +data: datetime
+  +total: float
+  +status: string
+  +id_consumidor: int
+}
+
+class ItemPedido {
+  +id_pedido: int
+  +id_produto: int
+  +quantidade: int
+  +subtotal: float
+}
+
+class Carrinho {
+  +id_consumidor: int
+  +itens: List<ItemPedido>
+}
+
+Usuario "1" -- "0..*" Pedido
+Usuario "1" -- "0..*" Produto
+Pedido "1" -- "1..*" ItemPedido
+Produto "1" -- "0..*" ItemPedido
+Usuario "1" -- "1" Carrinho
+@enduml
+```
 
 ### Diagrama de Sequência (Login)
-1. Usuário envia credenciais → Front-end
-2. Front-end envia requisição → Back-end
-3. Back-end valida dados no banco
-4. Banco responde → Back-end gera token
-5. Token → Front-end → Usuário autenticado
+```plantuml
+@startuml
+actor Usuario
+participant "Frontend" as FE
+participant "Backend (Flask API)" as BE
+database "Banco de Dados" as DB
+
+Usuario -> FE : insere email e senha
+FE -> BE : POST /login
+BE -> DB : valida credenciais
+DB --> BE : dados do usuário
+BE -> BE : gera token JWT
+BE --> FE : token JWT
+FE --> Usuario : acesso concedido
+@enduml
+```
 
 ### Diagrama de Atividades (Venda de Produto)
-- Início → Login → Painel do vendedor → Cadastro de produto → Produto publicado → Pedido recebido → Confirma envio → Fim
+```plantuml
+@startuml
+start
+:Login do Vendedor;
+:Ir para Painel de Produtos;
+:Selecionar 'Novo Produto';
+:Preencher Formulário;
+:Enviar Produto;
+:Produto Publicado;
+:Receber Pedido;
+:Confirmar Envio;
+stop
+@enduml
+```
 
 ## 📄 Protótipos (Figma)
 
