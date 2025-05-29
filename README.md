@@ -111,7 +111,7 @@ e-plant/
 ## 📅 Status Atual
 
 - ✅ Estrutura inicial configurada
-- ✅ Protótipos de alta fidelidade definidos
+- ✅ Protótipos de baixa fidelidade definidos
 - 🔄 Implementação do front-end e backend em andamento
 - 🧪 Plano de testes automatizados em elaboração
 
