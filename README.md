@@ -8,7 +8,7 @@ O objetivo deste projeto é criar uma plataforma funcional que permita:
 - Consumidores navegarem, comprarem e acompanharem pedidos de produtos como mudas, terrários e cestas orgânicas.
 - Vendedores cadastrarem seus produtos, gerenciarem pedidos e acessarem painéis com informações de vendas.
 
-> Este projeto está em desenvolvimento como parte de um portfólio voltado para a atuação como Analista de QA e Requisitos.
+> Este projeto está em desenvolvimento como parte de um portfólio voltado para minha carreira de analista de sistemas com foco em desenvolvimento web full stack, engenharia de requisitos e qualidade de software.
 
 ---
 
@@ -138,4 +138,4 @@ Distribuído sob a licença MIT.
 
 ---
 
-**Desenvolvido com 💚 por Pedro – em busca de uma oportunidade como Analista de QA ou Requisitos.**
+**Desenvolvido com 💚 por Pedro Americano do Brasil.**
