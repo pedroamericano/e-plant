@@ -115,14 +115,6 @@ e-plant/
 - 🔄 Implementação do front-end e backend em andamento
 - 🧪 Plano de testes automatizados em elaboração
 
----
-
-## 📌 Objetivos QA e Requisitos
-
-Este projeto serve como base para:
-- Demonstrar habilidades práticas em análise de requisitos e testes
-- Criar documentação completa (UML, casos de uso, requisitos)
-- Implementar testes automatizados e pipelines CI/CD
 
 ---
 
