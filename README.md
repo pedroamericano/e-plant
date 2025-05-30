@@ -130,11 +130,6 @@ Este projeto serve como base para:
 
 Este repositório está em desenvolvimento individual. Futuramente serão bem-vindas contribuições de design, testes ou performance.
 
----
-
-## 📄 Licença
-
-Distribuído sob a licença MIT.
 
 ---
 
