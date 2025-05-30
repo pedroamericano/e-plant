@@ -147,7 +147,7 @@ stop
 @enduml
 ```
 
-## 📄 Protótipos (Figma)
+## 📄 Protótipos
 
 ### Telas do Consumidor:
 - Login / Cadastro
